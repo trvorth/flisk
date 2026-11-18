@@ -20,6 +20,7 @@ import { isValidPort } from "../utils/validation.js";
 export const restartCommand = new Command("restart")
     .description("Restart a running resource in the stack")
     .argument("<resource>", "Name of the resource (service) to restart")
+    .showHelpAfterError("\nRun `flisk resources` to see the resource names you can restart.")
     .option("--port <n>", "Tilt UI port (default: TILT_PORT or 10350)")
     .option("--rebuild", "Rebuild the image through Tilt instead of restarting the container", false)
     .option("--project <path>", "Restart resources for the Flisk project in this folder (default: the current project)")
